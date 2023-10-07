@@ -47,7 +47,7 @@
                 <tr>
                     <th>Order Date</th>
                     <th>Order ID</th>
-                    <th>Restaurant</th>
+                    <th>Customer</th>
                     <th>Total</th>
                     <th>Status</th>
                     <th>Action</th>
