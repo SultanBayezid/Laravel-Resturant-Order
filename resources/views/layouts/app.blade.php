@@ -153,7 +153,7 @@
           <li class="nav-header" style="font-size:12px;">SETTINGS</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-file"></i>
+              <i class="nav-icon fas fa-cogs"></i>
               <p>Settings</p>
             </a>
           </li>

@@ -28,7 +28,7 @@ class MenuController extends Controller
 
     public function index()
     {
-        $menus = Menu::all(); // Retrieve all menus
+        $menus = Menu::latest()->get(); // Retrieve all menus
         return view('backend.menus.list', compact('menus'));
     }
 
