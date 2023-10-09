@@ -17,7 +17,7 @@
 
 <!-- Image -->
 <div class="section-main-image">
-    <div class="bg-image"><img src="frontend/img/photos/hero-fresh.jpg" alt=""></div>
+    <div class="bg-image"><img src="frontend/img/photos/hero-dark.jpg" alt=""></div>
 </div>
 
 </section>
@@ -97,47 +97,15 @@
     ]
 }'>
     <!-- Menu Sample -->
+    @foreach($categories as $category)
     <div class="menu-sample">
         <a href="menu-list-navigation.html#Burgers">
-            <img src="{{asset('frontend/img/photos/menu-sample-burgers.jpg')}}" alt="" class="image">
-            <h3 class="title">Burgers</h3>
+            <img src="{{ url('uploads/' . $category->image) }}" alt="" class="image">
+            <h3 class="title">{{$category->name}}</h3>
         </a>
     </div>
-    <!-- Menu Sample -->
-    <div class="menu-sample">
-        <a href="menu-list-navigation.html#Pizza">
-            <img src="{{asset('frontend/img/photos/menu-sample-pizza.jpg')}}" alt="" class="image">
-            <h3 class="title">Pizza</h3>
-        </a>
-    </div>
-    <!-- Menu Sample -->
-    <div class="menu-sample">
-        <a href="menu-list-navigation.html#Sushi">
-            <img src="{{asset('frontend/img/photos/menu-sample-sushi.jpg')}}" alt="" class="image">
-            <h3 class="title">Sushi</h3>
-        </a>
-    </div>
-    <!-- Menu Sample -->
-    <div class="menu-sample">
-        <a href="menu-list-navigation.html#Pasta">
-            <img src="{{asset('frontend/img/photos/menu-sample-pasta.jpg')}}" alt="" class="image">
-            <h3 class="title">Pasta</h3>
-        </a>
-    </div>
-    <!-- Menu Sample -->
-    <div class="menu-sample">
-        <a href="menu-list-navigation.html#Desserts">
-            <img src="{{asset('frontend/img/photos/menu-sample-dessert.jpg')}}" alt="" class="image">
-            <h3 class="title">Desserts</h3>
-        </a>
-    </div>
-    <!-- Menu Sample -->
-    <div class="menu-sample">
-        <a href="menu-list-navigation.html#Drinks">
-            <img src="{{asset('frontend/img/photos/menu-sample-drinks.jpg')}}" alt="" class="image">
-            <h3 class="title">Drinks</h3>
-        </a>
-    </div>
+    @endforeach
+
 </div>
 
 </section>

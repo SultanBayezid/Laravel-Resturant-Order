@@ -46,7 +46,8 @@
                         @foreach($categories as $category)
                         <div id="{{$category->name}}" class="menu-category">
                             <div class="menu-category-title">
-                                <div class="bg-image"><img src="{{ asset('storage/uploads/' . $category->image) }}" alt=""></div>
+                            <div class="bg-image"><img src="{{ url('uploads/' . $category->image) }}" alt=""></div>
+
                                 <h2 class="title">{{$category->name}}</h2>
                             </div>
                          

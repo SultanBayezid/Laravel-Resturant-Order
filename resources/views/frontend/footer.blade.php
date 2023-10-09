@@ -73,8 +73,78 @@
 </a>
 <button class="close" data-toggle="panel-mobile"><i class="ti ti-close"></i></button>
 </div>
-<nav class="module module-navigation"></nav>
+<nav class="module module-navigation">
+
+<div class="" style="font-size:14px;text-transform: uppercase;">
+    
+
+
+<div id="navbarNav">
+    <ul class="navbar-nav">
+        @auth
+            @if (request()->is('user/order-history', 'user/review', 'user/profile', 'user/update-profile', 'user/update-email', 'user/update-password', 'orders'))
+                <!-- Display this menu only for logged-in users visiting specified routes -->
+                <style>
+    #nav-main-mobile {
+        display:none !important;
+    }
+    .hidemyclass {
+        display:none !important;
+    }
+</style>
+<li class="nav-item">
+                <a class="nav-link{{ request()->routeIs('user.profile') ? ' active' : '' }}"
+                    href="{{ route('user.profile') }}"
+                    style="font-family: 'lato', sans-serif;{{ request()->routeIs('user.profile') ? ' font-size: 16px; font-weight: bold; color: #1a8917;' : ' font-size: 14px; font-weight: normal; color: #000;' }}">
+                    <i class="ti ti-user" style="margin-right: 10px;"></i> My Profile
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link{{ request()->routeIs('user.order_history') ? ' active' : '' }}"
+                    href="{{ route('user.order_history') }}"
+                    style="font-family: 'lato', sans-serif;{{ request()->routeIs('user.order_history') ? ' font-size: 16px; font-weight: bold; color: #1a8917;' : ' font-size: 14px; font-weight: normal; color: #000;' }}">
+                    <i class="ti ti-file" style="margin-right: 10px;"></i> Order History
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link{{ request()->routeIs('user.review') ? ' active' : '' }}"
+                    href="{{ route('user.review') }}"
+                    style="font-family: 'lato', sans-serif;{{ request()->routeIs('user.review') ? ' font-size: 16px; font-weight: bold; color: #1a8917;' : ' font-size: 14px; font-weight: normal; color: #000;' }}">
+                    <i class="ti ti-star" style="margin-right: 10px;"></i> Reviews
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link{{ request()->routeIs('logout') ? ' active' : '' }}"
+                    href="{{ route('logout') }}"
+                    style="font-family: 'lato', sans-serif;{{ request()->routeIs('logout') ? ' font-size: 16px; font-weight: bold; color: #1a8917;' : ' font-size: 14px; font-weight: normal; color: #000;' }}">
+                    <i class="ti ti-lock" style="margin-right: 10px;"></i> Log Out
+                </a>
+            </li>
+                <li class="nav-item mt-3">
+                    <a class="nav-link" href="/">Back To Site</a>
+                </li>
+            @endif
+        @endauth
+    </ul>
+</div>
+
+        </div>
+</nav>
 <div class="module module-social">
+<div class="p-5">
+@if(auth()->check())
+<div class="btn-group">
+<a href="{{route('user.profile')}}"class="btn btn-success btn-sm  hidemyclass">Back to my Account</a>
+<a href="{{ route('logout') }}" class="btn btn-success btn-sm" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out </a>
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+</div>
+@else
+<a href="{{route('login')}}"class="btn btn-success btn-sm">Login</a>
+
+@endif
+</div>
 <h6 class="text-sm mb-3">Follow Us!</h6>
 <a href="#" class="icon icon-social icon-circle icon-sm icon-facebook"><i class="fa fa-facebook"></i></a>
 <a href="#" class="icon icon-social icon-circle icon-sm icon-google"><i class="fa fa-google"></i></a>

@@ -80,12 +80,18 @@
                             <span class="input-group-text">Upload</span>
                         </div>
                     </div>
-                    @if ($category->image)
-                          <div class="form-group">
+             
+
+                      @if ($category->image)
+                      <div class="form-group">
                               <label>Current Image:</label>
-                              <img src="{{ asset('storage/uploads/' . $category->image) }}" alt="Category Image" width="100">
+                              <img src="{{ url('uploads/' . $category->image) }}" alt="Category Image" width="100">
                           </div>
-                      @endif
+   
+@else
+    <img alt="Default Image" class="table-avatar" src="{{ asset('backend/dist/img/noimage.jpg') }}" style="max-width:100px">
+@endif
+
                   </div>
                 </div>
                 <!-- /.card-body -->

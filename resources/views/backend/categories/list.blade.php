@@ -69,12 +69,12 @@
                     <tr>
                     <td width="10%">{{$category->order_id}}</td>
                     <td width="30%">
-    @if ($category->image)
-    <img src="{{ asset('storage/uploads/' . $category->image) }}" alt="Category Image" width="100">
-      
-    @else
-        <img alt="Default Image" class="table-avatar" src="{{ asset('backend/dist/img/noimage.jpg') }}" style="max-width:100px">
-    @endif
+                    @if ($category->image)
+    <img src="{{ url('uploads/' . $category->image) }}" alt="Category Image" width="100">
+@else
+    <img alt="Default Image" class="table-avatar" src="{{ asset('backend/dist/img/noimage.jpg') }}" style="max-width:100px">
+@endif
+
 </td>
                     <td width="30%">{{$category->name}}</td>
                     <td width="30%">{{$category->name}}</td>

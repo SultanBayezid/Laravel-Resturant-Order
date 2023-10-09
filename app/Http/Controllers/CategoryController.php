@@ -13,21 +13,28 @@ class CategoryController extends Controller
      */
 
      private function handleImageUpload($request, $category)
-{
-    if ($request->hasFile('image')) {
-        // Delete the previous image file, if it exists
-        if ($category->image) {
-            Storage::delete('public/uploads/' . $category->image);
-        }
-
-        $image = $request->file('image');
-        $imageName = time() . '.' . $image->getClientOriginalExtension();
-        $image->storeAs('public/uploads', $imageName);
-        return $imageName;
-    } else {
-        return null;
-    }
-}
+     {
+         if ($request->hasFile('image')) {
+             // Delete the previous image file, if it exists
+             if ($category->image) {
+                 // Specify the full path to the old image in the 'public/uploads' directory
+                 $oldImagePath = public_path('uploads/' . $category->image);
+                 
+                 // Check if the old image file exists and delete it
+                 if (file_exists($oldImagePath)) {
+                     unlink($oldImagePath);
+                 }
+             }
+     
+             $image = $request->file('image');
+             $imageName = time() . '.' . $image->getClientOriginalExtension();
+             // Save the image directly to the 'public/uploads' directory
+             $image->move(public_path('uploads'), $imageName);
+             return $imageName;
+         } else {
+             return null;
+         }
+     }
 
     public function index()
     {
@@ -48,7 +55,9 @@ class CategoryController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+    {  
+
+        // dd($request->all());
         // Validate the form data
         $request->validate([
             'name' => 'required|string|max:255',

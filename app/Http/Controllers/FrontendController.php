@@ -11,8 +11,10 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        // Load the homepage view.
-        return view('frontend.home');
+        $Menus = Menu::all();
+        $categories = Category::all();
+        return view('frontend.home', compact('Menus', 'categories'));
+
     }
 
     public function menu()
