@@ -1,124 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant App - Laravel</title>
-    <!-- Add any additional stylesheets, meta tags, or scripts here -->
-</head>
+# Restaurant App Built with Laravel
 
-<body>
+## Overview
 
-    <header>
-        <h1>Restaurant App Built with Laravel</h1>
-    </header>
+This Laravel-based Restaurant App provides a seamless platform for both restaurant administrators and customers. The system is designed to streamline the process of managing menus, handling orders, and enhancing the overall user experience.
 
-    <section id="overview">
-        <h2>Overview</h2>
-        <p>This Laravel-based Restaurant App provides a seamless platform for both restaurant administrators and customers. The system is designed to streamline the process of managing menus, handling orders, and enhancing the overall user experience.</p>
-    </section>
+## Features
 
-    <section id="features">
-        <h2>Features</h2>
-        <h3>User Roles</h3>
-        <ul>
-            <li><strong>Admin:</strong>
-                <ul>
-                    <li>Accessible through secure login.</li>
-                    <li>Has the authority to add and manage menus.</li>
-                    <li>Can add menu items under various categories.</li>
-                    <li>Manages customer data.</li>
-                    <li>Monitors and processes orders.</li>
-                </ul>
-            </li>
-            <li><strong>Customer:</strong>
-                <ul>
-                    <li>Registers and logs in to the system.</li>
-                    <li>Browses available menus and menu items.</li>
-                    <li>Adds selected items to the cart.</li>
-                    <li>Manages the cart contents.</li>
-                    <li>Places and tracks orders.</li>
-                </ul>
-            </li>
-        </ul>
+### 1. User Roles
 
-        <h3>Menu Management</h3>
-        <ul>
-            <li><strong>Admin:</strong>
-                <ul>
-                    <li>Creates and updates restaurant menus.</li>
-                    <li>Adds and modifies menu items with details such as name, description, and price.</li>
-                </ul>
-            </li>
-        </ul>
+- **Admin:**
+  - Accessible through secure login.
+  - Has the authority to add and manage menus.
+  - Can add menu items under various categories.
+  - Manages customer data.
+  - Monitors and processes orders.
 
-        <h3>Customer Order Workflow</h3>
-        <ul>
-            <li><strong>Customer:</strong>
-                <ul>
-                    <li>Visits the website and logs in.</li>
-                    <li>Navigates through menus and selects desired items.</li>
-                    <li>Adds items to the cart.</li>
-                    <li>Manages the cart contents, updating quantities if needed.</li>
-                    <li>Places an order and receives order confirmation.</li>
-                </ul>
-            </li>
-        </ul>
+- **Customer:**
+  - Registers and logs in to the system.
+  - Browses available menus and menu items.
+  - Adds selected items to the cart.
+  - Manages the cart contents.
+  - Places and tracks orders.
 
-        <h3>Order Management</h3>
-        <ul>
-            <li><strong>Admin:</strong>
-                <ul>
-                    <li>Receives and processes customer orders.</li>
-                    <li>Updates order status (e.g., preparing, dispatched).</li>
-                    <li>Manages order history.</li>
-                </ul>
-            </li>
-        </ul>
-    </section>
+### 2. Menu Management
 
-    <section id="how-to-use">
-        <h2>How to Use</h2>
-        <ol>
-            <li><strong>Clone the Repository:</strong>
-                <pre><code>git clone https://github.com/yourusername/restaurant-app.git</code></pre>
-            </li>
-            <li><strong>Install Dependencies:</strong>
-                <pre><code>composer install</code></pre>
-            </li>
-            <li><strong>Configure Database:</strong>
-                <ul>
-                    <li>Copy the <code>.env.example</code> file to <code>.env</code> and configure your database settings.</li>
-                    <li>Run migrations and seed the database:
-                        <pre><code>php artisan migrate --seed</code></pre>
-                    </li>
-                </ul>
-            </li>
-            <li><strong>Run the Application:</strong>
-                <pre><code>php artisan serve</code></pre>
-            </li>
-            <li><strong>Access the Application:</strong>
-                Open your browser and go to <code>http://localhost:8000</code> (or the specified port).
-            </li>
-        </ol>
-    </section>
+- **Admin:**
+  - Creates and updates restaurant menus.
+  - Adds and modifies menu items with details such as name, description, and price.
 
-    <section id="technologies">
-        <h2>Technologies Used</h2>
-        <ul>
-            <li><strong>Laravel:</strong> The PHP framework used for building the backend of the application.</li>
-            <li><strong>MySQL:</strong> Database management system for storing and retrieving data.</li>
-        </ul>
-    </section>
+### 3. Customer Order Workflow
 
-    <section id="contributing">
-        <h2>Contributing</h2>
-        <p>If you'd like to contribute to the project, feel free to open an issue or submit a pull request. Your contributions are highly appreciated!</p>
-    </section>
+- **Customer:**
+  - Visits the website and logs in.
+  - Navigates through menus and selects desired items.
+  - Adds items to the cart.
+  - Manages the cart contents, updating quantities if needed.
+  - Places an order and receives order confirmation.
 
-    <!-- Add any additional sections or content as needed -->
+### 4. Order Management
 
-</body>
+- **Admin:**
+  - Receives and processes customer orders.
+  - Updates order status (e.g., preparing, dispatched).
+  - Manages order history.
 
-</html>
+## How to Use
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/SultanBayezid/restaurant-app.git
+   ```
+
+2. **Install Dependencies:**
+   ```bash
+   composer install
+   ```
+
+3. **Configure Database:**
+   - Copy the `.env.example` file to `.env` and configure your database settings.
+   - Run migrations and seed the database:
+     ```bash
+     php artisan migrate --seed
+     ```
+
+4. **Run the Application:**
+   ```bash
+   php artisan serve
+   ```
+
+5. **Access the Application:**
+   Open your browser and go to `http://localhost:8000` (or the specified port).
+
+## Technologies Used
+
+- **Laravel:** The PHP framework used for building the backend of the application.
+- **MySQL:** Database management system for storing and retrieving data.
+
+## Contributing
+
+If you'd like to contribute to the project, feel free to open an issue or submit a pull request. Your contributions are highly appreciated!
+
